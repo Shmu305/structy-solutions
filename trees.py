@@ -37,3 +37,13 @@ def breadth_first_values(root):
     if current.right:
       queue.append(current.right)
   return res
+
+#041 fomd tree min value
+
+def tree_min_value(root):
+  
+  if not root:
+    return float('inf')
+  min_left = tree_min_value(root.left)
+  min_right = tree_min_value(root.right)
+  return min(root.val, min_left, min_right)
